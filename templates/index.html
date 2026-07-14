@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenChess</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/board.css') }}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="brand">
+            <span class="brand-mark">&#9822;</span>
+            <span class="brand-name">Open<span class="brand-accent">Chess</span></span>
+        </div>
+        <button id="reset-button" class="reset-button" type="button">New Game</button>
+    </header>
+
+    <main class="game-layout">
+
+        <section class="board-section">
+            <div class="player-tag player-tag--black">
+                <span class="player-dot player-dot--black"></span>
+                Black
+            </div>
+
+            <div class="board-frame">
+                <div id="board" class="board"></div>
+            </div>
+
+            <div class="player-tag player-tag--white">
+                <span class="player-dot player-dot--white"></span>
+                White
+            </div>
+        </section>
+
+        <aside class="side-panel">
+            <div class="status-card">
+                <div class="status-label">Turn</div>
+                <div id="turn-indicator" class="turn-indicator">White to move</div>
+                <div id="check-indicator" class="check-indicator" hidden>King in check</div>
+            </div>
+
+            <div class="history-card">
+                <div class="status-label">Move History</div>
+                <ol id="move-history" class="move-history"></ol>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>OpenChess &mdash; Phase 1</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/board.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+</body>
+</html>
